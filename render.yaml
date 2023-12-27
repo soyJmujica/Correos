@@ -1,7 +1,7 @@
 databases:
-  - name: Correos
+  - name: Correos_db
     databaseName: Correos
-    user: Correos
+    user: correos_db_user
 
 services:
   - type: web
