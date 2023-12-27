@@ -5,7 +5,7 @@ databases:
 
 services:
   - type: web
-    name: Correos
+    name: Correos_db
     runtime: python
     buildCommand: "./build.sh"
     startCommand: "gunicorn Correos.wsgi:application"
