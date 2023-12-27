@@ -1,6 +1,6 @@
 databases:
-  - name: Correos_db
-    databaseName: Correos_db
+  - name: Correos
+    databaseName: correos_db_v2
     user: correos_db_user
 
 services:
