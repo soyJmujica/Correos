@@ -6,7 +6,7 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 
 def AddAgent(request):
 	if request.method == 'POST':
-		form = TeamForm(request.POST.get())
+		form = TeamForm(request.POST)
 		if form.is_valid():
 			form.save()
 			return redirect('agentes')
