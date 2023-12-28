@@ -88,7 +88,7 @@ WSGI_APPLICATION = "Correos.wsgi.application"
 DATABASES = {
     'default': dj_database_url.config(
         # Feel free to alter this value to suit your needs.
-        default='DATABASE_URL'
+        default='postgres://correos_db_user:Yg5pHLiPvsZOmFPkwwOlzAItRDTWcrh6@dpg-cm68nl7qd2ns73esidig-a/correos_db_v2'
     )
 }
 
