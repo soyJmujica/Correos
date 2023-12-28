@@ -4,7 +4,7 @@
 {% block content %}
 
 <form action="{% url 'agregar' %}" method="POST">
-	{% csrf_token%}
+	{% csrf_token %}
 	<br>
 	{{form.as_p}}
 
