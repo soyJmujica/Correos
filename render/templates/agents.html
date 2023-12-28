@@ -3,6 +3,24 @@
 
 {% block content %}
 
-<video class="media-element tErWI93xEKrI2OkozPs7J " height="359" loop="" width="640" style="margin: 0px auto;"><source src="https://preview.redd.it/uey8b7guev8c1.gif?width=640&amp;format=mp4&amp;s=9baac40f5c5253f429b3a6e6630cb7c4a469ca0d"></video>
+<table style="width: 100%;border-collapse: separate;">
+	<!-- Headers -->
+	<tr bgcolor="#00CDCD">
+		<th style="border: 1px solid #ccc; padding: 8px;">First Name</th>
+		<th style="border: 1px solid #ccc; padding: 8px;">Last Name</th>
+		<th style="border: 1px solid #ccc; padding: 8px;">Phone Number</th>
+		<th style="border: 1px solid #ccc; padding: 8px;">Email</th>
+	</tr>
+	<!-- Table Data -->
+	{% for agent in agents %}
+	<tr>
+		<td style="border: 1px solid #ccc; padding: 8px;">{{agent.first_name}}</td>
+		<td style="border: 1px solid #ccc; padding: 8px;">{{agent.last_name}}</td>
+		<td style="border: 1px solid #ccc; padding: 8px;">{{agent.phone}}</td>
+		<td style="border: 1px solid #ccc; padding: 8px;">{{agent.email}}</td>
+	</tr>
+	{% endfor %}
+	
+</table>
 
 {% endblock %}
