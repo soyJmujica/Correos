@@ -16,11 +16,10 @@ def AddAgent(request):
 		'form':form})
 
 def Agents(request):
-	agents = TeamMembers.objects.all()
-	return render(request, 'agents.html', {'encabezado':"Team", "agents":agents})
+	return render(request, 'agents.html', {'encabezado':"Team"})
 
 def index(request):
 	return render(request,'index.html',{})
 
-	
+
 
