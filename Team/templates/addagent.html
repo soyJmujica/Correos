@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block content %}
-<!--figure><img src="{% static 'img/logoculo.png' %}"></figure-->
+
 <form action="{% url 'agregar' %}" method="POST">
 	{% csrf_token%}
 	<br>
