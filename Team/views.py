@@ -14,3 +14,6 @@ def AddAgent(request):
 	return render(request, 'addagent.html', {'encabezado':'Add New Agent To The Team',
 		'form':form})
 
+def Agents(request):
+	agents = TeamMembers.objects.all()
+	return render(request, 'agents.html', {'encabezado':"Team", "agents":agents})
