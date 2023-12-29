@@ -17,7 +17,7 @@ def AddAgent(request):
 
 def Agents(request):
 	agentes=TeamMembers.objects.all()
-	return render(request, 'agents.html', {'encabezado':"Team"})
+	return render(request, 'agents.html', {'encabezado':"Team", 'agents':agentes})
 
 def index(request):
 	return render(request,'index.html',{})
