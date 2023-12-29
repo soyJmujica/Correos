@@ -11,9 +11,11 @@ class TeamMembers(models.Model):
 	pending = models.IntegerField(default=0)
 	closed = models.IntegerField(default=0)
 
-	def save(self, *args, **kwargs):
-		self.picture.name = str(self.first_name+"_"+self.last_name+".jpg")
-
+	
 
 	def __str__(self):
 		return str(self.first_name + " " + self.last_name)
+
+
+'''def save(self, *args, **kwargs):
+			self.picture.name = str(self.first_name+"_"+self.last_name+".jpg")'''
