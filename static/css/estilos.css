@@ -3,25 +3,29 @@
     padding: 0;
     box-sizing: border-box;
     font-family: sans-serif;
-}
-
 .navbar {
+    height: 50px;
+    padding: 20px 40px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: gray;
+    background-color: #000;
     right: 0;
 }
 
-
-.navbar-nav {
-    list-style-type: none;
-    display: flex;
+.navbar .logo {
+    max-width: 5rem;
 }
 
-.navbar-nav li a {
+.nav-list {
+    list-style-type: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-list li a {
     text-decoration: none;
-    color: black;
+    color: #1c1c1c;
 }
 
 .abrir-menu,
@@ -68,12 +72,12 @@
         visibility: visible;
     }
     
-    .navbar-nav {
+    .nav-list {
         flex-direction: column;
         align-items: end;
     }
 
-    .navbar-nav li a {
-        color: darkred;
+    .nav-list li a {
+        color: #ecececec;
     }
 }
