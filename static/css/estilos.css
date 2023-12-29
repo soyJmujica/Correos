@@ -19,7 +19,7 @@
     display: flex;
 }
 
-#navbarNav .navbar-nav li a {
+.navbar-nav li a {
     text-decoration: none;
     color: black;
 }
@@ -73,7 +73,7 @@
         align-items: end;
     }
 
-    #navbarNav .navbar-nav li a {
+    .navbar-nav li a {
         color: darkred;
     }
 }
