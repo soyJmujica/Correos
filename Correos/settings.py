@@ -29,9 +29,9 @@ DEBUG = 'RENDER' not in os.environ
 
 ALLOWED_HOSTS = ['*']
 
-'''RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
+RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
 if RENDER_EXTERNAL_HOSTNAME:
-    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)'''
+    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
 
 
 # Application definition
@@ -88,7 +88,8 @@ WSGI_APPLICATION = "Correos.wsgi.application"
 DATABASES = {
     'default': dj_database_url.config(
         # Feel free to alter this value to suit your needs.
-        default='postgres://correos_db_user:Yg5pHLiPvsZOmFPkwwOlzAItRDTWcrh6@dpg-cm68nl7qd2ns73esidig-a/correos_db_v2'
+        default='postgres://correos_db_user:Yg5pHLiPvsZOmFPkwwOlzAItRDTWcrh6@dpg-cm68nl7qd2ns73esidig-a/correos_db_v2',
+        conn_max_age = 600
     )
 }
 
