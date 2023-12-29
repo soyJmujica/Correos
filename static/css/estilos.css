@@ -6,7 +6,6 @@
 }
 
 .navbar {
-    height: 30px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -14,17 +13,13 @@
     right: 0;
 }
 
-.navbar .navbar-brand {
-    max-width: 2rem;
-}
 
 .navbar-nav {
     list-style-type: none;
     display: flex;
-    gap: 1rem;
 }
 
-.navbar-nav li a {
+#navbarNav .navbar-nav li a {
     text-decoration: none;
     color: black;
 }
@@ -78,7 +73,7 @@
         align-items: end;
     }
 
-    .navbar-nav li a {
-        color: #ecececec;
+    #navbarNav .navbar-nav li a {
+        color: darkred;
     }
 }
