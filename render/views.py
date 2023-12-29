@@ -22,5 +22,9 @@ def Agents(request):
 def index(request):
 	return render(request,'index.html',{})
 
+def AgentInfo(request, agent_id):
+	agente = get_object_or_404(TeamMembers, pk = agent_id)
+	return render(request, 'agentinfo.html',{'encabezado':agente.first_name, 'agent':agente})
+
 
 

@@ -13,11 +13,11 @@
 	</tr>
 	<!-- Table Data -->
 	{% for agent in agents %}
-	<tr>
+	<tr><a href="{% url 'detalles agente' agent.id %}">
 		<td style="border: 1px solid #ccc; padding: 8px;">{{agent.first_name}}</td>
 		<td style="border: 1px solid #ccc; padding: 8px;">{{agent.last_name}}</td>
 		<td style="border: 1px solid #ccc; padding: 8px;">{{agent.phone}}</td>
-		<td style="border: 1px solid #ccc; padding: 8px;">{{agent.email}}</td>
+		<td style="border: 1px solid #ccc; padding: 8px;">{{agent.email}}</td></a>
 	</tr>
 	{% endfor %}
 	
