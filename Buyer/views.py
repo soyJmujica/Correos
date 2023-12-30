@@ -15,3 +15,15 @@ def undercontract(request):
 		form = BuyerForm()
 	return render(request, "undercontract.html", {'form':form,
 		'encabezado':"Under Contract Buyer"})
+
+
+def transactions(request):
+	filtro = request.GET.get('filtro',)
+	if filtro == 'Enviado':
+		properties = UnderContractBuyer.objects.filter(emailsend = True)
+	elif filtro == 'No Enviado':
+		properties = UnderContractBuyer.objects.filter(emailsend = False)
+	else:
+		properties = UnderContractBuyer.objects.all()
+	return render(request, 'transacciones.html',{'encabezado':'Transactions','properties':properties})
+

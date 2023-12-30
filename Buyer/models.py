@@ -101,6 +101,9 @@ class UnderContractBuyer(models.Model):
 			else:
 				self.loan_approval=self.efective+timedelta(days=self.loan_time)
 
+		if self.inspection_time=='0':
+			self.financing == 'Cash'
+
 		self.cleartoclose = self.closing - timedelta(days=7)
 		self.lien = self.closing - timedelta(days=10)
 		self.DA_request = self.inspection_date+timedelta(days=1)
