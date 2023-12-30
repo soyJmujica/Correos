@@ -59,7 +59,6 @@ class UnderContractBuyer(models.Model):
 
 
 	def save(self, *args, **kwargs):
-		#self.screenshot.name = str(self.titlecompany+'.jpg')
 		self.escrow_date = self.efective + timedelta(days=self.escrow_time)
 		self.HOA_date = self.efective + timedelta(days= 5)
 		self.inspection_date = self.efective + timedelta(days=self.inspection_time)
