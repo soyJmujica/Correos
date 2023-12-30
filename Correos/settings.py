@@ -46,7 +46,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "djmoney",
     # my apps
-    "Correos","Team"
+    "Correos","Team", "Buyer"
 
 ]
 
