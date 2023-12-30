@@ -6,16 +6,14 @@
 <table style="width: 100%;border-collapse: separate;">
 	<!-- Headers -->
 	<tr bgcolor="#00CDCD">
-		<th style="border: 1px solid #ccc; padding: 8px;">First Name</th>
-		<th style="border: 1px solid #ccc; padding: 8px;">Last Name</th>
+		<th style="border: 1px solid #ccc; padding: 8px;">Agent's Name</th>
 		<th style="border: 1px solid #ccc; padding: 8px;">Phone Number</th>
 		<th style="border: 1px solid #ccc; padding: 8px;">Email</th>
 	</tr>
 	<!-- Table Data -->
 	{% for agent in agents %}
 	<tr>
-		<td style="border: 1px solid #ccc; padding: 8px;"><a href="{% url 'detalles agente' agent.id %}">{{agent.first_name}}</a></td>
-		<td style="border: 1px solid #ccc; padding: 8px;"><a href="{% url 'detalles agente' agent.id %}">{{agent.last_name}}</a></td>
+		<td style="border: 1px solid #ccc; padding: 8px;"><a href="{% url 'detalles agente' agent.id %}">{{agent.first_name}} {{agent.last_name}}</a></td>
 		<td style="border: 1px solid #ccc; padding: 8px;">{{agent.phone}}</td>
 		<td style="border: 1px solid #ccc; padding: 8px;">{{agent.email}}</td>
 	</tr>
