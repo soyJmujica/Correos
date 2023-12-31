@@ -26,24 +26,28 @@
 			{% if property.emailsend is False %}
 			<tr>
 				<td style="border: 1px solid #bbb;padding: 5px;">{{property.address}}</td>
-				<td>{{property.buyer_firstname}} {{property.buyer_firstname}}</td>
-				<td>{{property.efective}}</td>
-				<td>{{property.escrow_date}}</td>
-				<td>{{property.price}}</td>
-				<td>{{property.escrow_amount}}</td>
-				<td>{{property.titlecompany}}</td>
-				<td>{{property.inspectionteam}}</td>
+				<td style="border: 1px solid #bbb;padding: 5px;">{{property.buyer_firstname}} {{property.buyer_firstname}}</td>
+				<td style="border: 1px solid #bbb;padding: 5px;">{{property.efective}}</td>
+				<td style="border: 1px solid #bbb;padding: 5px;">{{property.escrow_date}}</td>
+				<td style="border: 1px solid #bbb;padding: 5px;">{{property.price}}</td>
+				<td style="border: 1px solid #bbb;padding: 5px;">{{property.escrow_amount}}</td>
+				<td style="border: 1px solid #bbb;padding: 5px;">{{property.titlecompany}}</td>
+				<td style="border: 1px solid #bbb;padding: 5px;">{{property.inspectionteam}}</td>
 			</tr>
 			{% else %}
 			<tr bgcolor="#59FFD2">
-				<td style="border: 1px solid #bbb;padding: 5px;">{{property.address}}</td>
-				<td>{{property.first_name}} {property.last_name}}</td>
-				<td>{{property.efective}}</td>
-				<td>{{property.escrow_date}}</td>
-				<td>{{property.price}}</td>
-				<td>{{property.escrow_amount}}</td>
-				<td>{{property.titlecompany}}</td>
-				<td>{{property.inspectionteam}}</td>					
+				<td style="border: 1px solid #ccc; padding: 8px;">
+					<a href="{% url 'detalles' property.id %}">
+						{{property.address}}
+					</a>
+				</td>
+				<td style="border: 1px solid #bbb;padding: 5px;">{{property.first_name}} {property.last_name}}</td>
+				<td style="border: 1px solid #bbb;padding: 5px;">{{property.efective}}</td>
+				<td style="border: 1px solid #bbb;padding: 5px;">{{property.escrow_date}}</td>
+				<td style="border: 1px solid #bbb;padding: 5px;">{{property.price}}</td>
+				<td style="border: 1px solid #bbb;padding: 5px;">{{property.escrow_amount}}</td>
+				<td style="border: 1px solid #bbb;padding: 5px;">{{property.titlecompany}}</td>
+				<td style="border: 1px solid #bbb;padding: 5px;">{{property.inspectionteam}}</td>					
 								
 			</tr>
 
