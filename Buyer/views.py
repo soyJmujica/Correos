@@ -27,3 +27,10 @@ def transactions(request):
 		properties = UnderContractBuyer.objects.all()
 	return render(request, 'transacciones.html',{'encabezado':'Transactions','properties':properties})
 
+
+def details(request, property_id):
+	address = get_object_or_404(UnderContractBuyer, pk = property_id)
+	
+	return render(request, 'detalles.html', {'property': address,
+		'encabezado':address.address})
+
