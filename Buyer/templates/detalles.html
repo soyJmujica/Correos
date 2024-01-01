@@ -14,7 +14,7 @@
 	<h2>Inspection Due Date: {{property.inspection_date}}</h2>
 </p>
 {% if property.status == "Pending" %}
-<form action="{% url '7 correos' property.id %}" method="POST">
+<form action="#" method="POST">
 	{% csrf_token %}
 	
 	<button class="btn btn-primary" type="button submit">
