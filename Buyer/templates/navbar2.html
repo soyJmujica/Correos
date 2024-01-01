@@ -1,0 +1,34 @@
+{% load static %}
+<div class="navigation">
+  <div class="toggle"><!--img src="{% static 'img/logoculo.png' %}" width="25%" alt="logo culo"-->
+  </div>
+   <ul>
+     <li>
+       <a href="{% url 'home' %}">
+         <span class="icon"><i class="fa fa-home" aria-hidden="true"></i></span>
+         <span class="title">Home</span>
+       </a>
+     </li>
+          <li>
+       <a href="{% url 'transacciones' %}">
+         <span class="icon"><i class="fa fa-book" aria-hidden="true"></i></span>
+         <span class="title">Transactions</span>
+       </a>
+     </li>
+          <li>
+       <a href="{% url 'detalles' property.id %}">
+         <span class="icon"><i class="fa fa-th-list" aria-hidden="true"></i></span>
+         <span class="title">Details</span>
+       </a>
+     </li>
+     <li>
+       <a href="{% url 'enviado' property.id %}">
+         <span class="icon"><i class="fa-th-list" aria-hidden='true'></i></span>
+         <span class="title">Send</span>
+       </a>
+     </li>
+   </ul> 
+</div>
+<!-- esto lleva codigo en JS, pero para que funcione correctamente,
+  se debe colocar en un <script> en la plantilla principal, si se
+    coloca aqui no se ejecuta correctamente-->
