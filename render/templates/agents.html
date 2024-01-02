@@ -9,6 +9,8 @@
 		<th style="border: 1px solid #ccc; padding: 8px;">Agent's Name</th>
 		<th style="border: 1px solid #ccc; padding: 8px;">Phone Number</th>
 		<th style="border: 1px solid #ccc; padding: 8px;">Email</th>
+		<th style="border: 1px solid #ccc; padding: 8px;">Pending Deals</th>
+		<th style="border: 1px solid #ccc; padding: 8px;">Closed Deals</th>
 	</tr>
 	<!-- Table Data -->
 	{% for agent in agents %}
@@ -16,6 +18,8 @@
 		<td style="border: 1px solid #ccc; padding: 8px;"><a href="{% url 'detalles agente' agent.id %}">{{agent.first_name}} {{agent.last_name}}</a></td>
 		<td style="border: 1px solid #ccc; padding: 8px;">{{agent.phone}}</td>
 		<td style="border: 1px solid #ccc; padding: 8px;">{{agent.email}}</td>
+		<td style="border: 1px solid #ccc; padding: 8px;">{{agent.pending}}</td>
+		<td style="border: 1px solid #ccc; padding: 8px;">{{agent.closed}}</td>
 	</tr>
 	{% endfor %}
 	
