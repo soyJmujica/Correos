@@ -24,7 +24,7 @@ def Agents(request):
 def index(request):
 	return render(request,'index.html',{})
 
-def AgentInfo(request):
+def AgentInfo(request, agent_id):
 	agents = TeamMembers.objects.all()
 	closed = UnderContractBuyer.objects.values('agent','status').annotate(Count('agent'))
 	a = closed.values_list('agent','status','agent__count')
@@ -37,7 +37,7 @@ def AgentInfo(request):
 					agent.closed = count[2]
 		agent.save()
 
-	return render(request, 'agents.html', {'encabezado':"Team", "agents":agents})
+	return render(request, 'agentinfo.html', {'encabezado':"Team", "agents":agents})
 
 
 
