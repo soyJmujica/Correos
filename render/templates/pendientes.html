@@ -1,6 +1,62 @@
 {% extends 'base.html' %}
 {% load static %}
-
 {% block content %}
-<figure><img src="{% static 'img/banner.png' %}"></figure>
+<p>
+	<form method="GET">
+		<select name="filtro">
+			<option value="Todas">Todas</option>
+			<option value="Enviado">Enviado</option>
+			<option value="No Enviado">No Enviado</option>
+		</select>
+		<button type="submit">Filtrar</button>
+	</form>
+
+<table style="width: 100%;border-collapse: collapse;">
+	<tr bgcolor="#ADD8E6">
+		<th style="border: 1px solid #bbb;padding: 5px;">Address</th>
+		<th style="border: 1px solid #bbb;padding: 5px;">Buyer's Name</th>
+		<th style="border: 1px solid #bbb;padding: 5px;">Efective Date</th>
+		<th style="border: 1px solid #bbb;padding: 5px;">Escrow Due Date</th>
+		<th style="border: 1px solid #bbb;padding: 5px;">Price</th>
+		<th style="border: 1px solid #bbb;padding: 5px;">Escrow Amount</th>
+		<th style="border: 1px solid #bbb;padding: 5px;">Title Company</th>
+		<th style="border: 1px solid #bbb;padding: 5px;">Inspection Team</th>
+	</tr>
+			{% for property in properties %}
+			{% if property.emailsend is False %}
+			<tr>
+				<td style="border: 1px solid #ccc; padding: 8px;">
+					<a href="{% url 'detalles' property.id %}">
+						{{property.address}}
+					</a>
+				</td>
+				<td style="border: 1px solid #bbb;padding: 5px;">{{property.buyer_firstname}} {{property.buyer_firstname}}</td>
+				<td style="border: 1px solid #bbb;padding: 5px;">{{property.efective}}</td>
+				<td style="border: 1px solid #bbb;padding: 5px;">{{property.escrow_date}}</td>
+				<td style="border: 1px solid #bbb;padding: 5px;">{{property.price}}</td>
+				<td style="border: 1px solid #bbb;padding: 5px;">{{property.escrow_amount}}</td>
+				<td style="border: 1px solid #bbb;padding: 5px;">{{property.titlecompany}}</td>
+				<td style="border: 1px solid #bbb;padding: 5px;">{{property.inspectionteam}}</td>
+			</tr>
+			{% else %}
+			<tr bgcolor="#59FFD2">
+				<td style="border: 1px solid #ccc; padding: 8px;">
+					<a href="{% url 'detalles' property.id %}">
+						{{property.address}}
+					</a>
+				</td>
+				<td style="border: 1px solid #bbb;padding: 5px;">{{property.first_name}} {property.last_name}}</td>
+				<td style="border: 1px solid #bbb;padding: 5px;">{{property.efective}}</td>
+				<td style="border: 1px solid #bbb;padding: 5px;">{{property.escrow_date}}</td>
+				<td style="border: 1px solid #bbb;padding: 5px;">{{property.price}}</td>
+				<td style="border: 1px solid #bbb;padding: 5px;">{{property.escrow_amount}}</td>
+				<td style="border: 1px solid #bbb;padding: 5px;">{{property.titlecompany}}</td>
+				<td style="border: 1px solid #bbb;padding: 5px;">{{property.inspectionteam}}</td>					
+								
+			</tr>
+
+			{% endif %}
+			{% endfor %}	
+</table>
+</p>
 {% endblock %}
