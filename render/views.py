@@ -53,5 +53,20 @@ def AgentsPending(request, agent_id):
 	return render(request, 'pendientes.html',{'encabezado':f"Pending Deals Of {agente}",
 		"properties":properties})
 
+def AgentsClosed(request,agent_id):
+	agente = get_object_or_404(TeamMembers, pk = agent_id)
+	properties = UnderContractBuyer.objects.filter(agent = agente, status = "Closed")
+
+	return render(request, 'cerrados.html', {'encabezado': f"Closed Deals Of {agente}",
+		'properties':properties})
+
+
+def AgentsDeals(request, agent_id):
+	agente = get_object_or_404(TeamMembers, pk = agent_id)
+	properties = UnderContractBuyer.objects.filter(agent=agente)
+
+	return render(request, 'sales.html', {'encabezado':f"All Deals Of {agente}",
+		'properties':properties})
+
 
 
