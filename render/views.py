@@ -46,9 +46,11 @@ def AgentInfo(request, agent_id):
 
 
 def AgentsPending(request, agent_id):
-	properties = UnderContractBuyer.objects.filter(agent = agent_id, status = "Pending")
+	agente = get_object_or_404(TeamMembers, pk = agent_id)
 
-	return render(request, 'pendientes.html',{'encabezado':f"Pending Deals Of {properties.agent_id}",
+	properties = UnderContractBuyer.objects.filter(agent = agente, status = "Pending")
+
+	return render(request, 'pendientes.html',{'encabezado':f"Pending Deals Of {agente}",
 		"properties":properties})
 
 
