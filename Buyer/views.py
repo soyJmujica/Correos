@@ -39,3 +39,10 @@ def emails(request, property_id):
 	return render(request, '7correos.html',{'encabezado':address.address, 'property':address})
 
 
+def saleclosed(request, property_id):
+	address = get_object_or_404(UnderContractBuyer, pk = property_id)
+	address.status = "Closed"
+	address.save()
+
+	return render(request, 'detalles.html', {'property': address,
+		'encabezado':address.address})

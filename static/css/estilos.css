@@ -84,3 +84,12 @@
         color: #ecececec;
     }
 }
+
+
+.form-container{
+    display: flex;
+}
+
+.form{
+    flex: 1;
+}

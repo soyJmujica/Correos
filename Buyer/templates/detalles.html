@@ -2,7 +2,9 @@
 {% block content %}
 
 <h1 class="display-4 text-center">{{property.address}}</h1>
-<p>
+<p>{% if property.status=='Closed' %}
+	<h1>CLOSED</h1>
+	{% endif %}
 	<h2>Buyer: {{property.buyer_firstname}} {{property.buyer_lastname}}</h2>
 	<h2>Buyer Info: {{property.buyer_email}} {{property.buyer_phone}}</h2>
 	<h2>Title company: {{property.titlecompany}}</h2>
@@ -14,18 +16,26 @@
 	<h2>Inspection Due Date: {{property.inspection_date}}</h2>
 </p>
 {% if property.status == "Pending" %}
-<form action="{% url '7 correos' property.id %}" method="POST">
+<div class="form-container">
+<form class="form" action="{% url '7 correos' property.id %}" method="POST">
 	{% csrf_token %}
 	
 	<button class="btn btn-primary" type="button submit">
-	Generar
+	Generate Emails
 	</button>
 </form>
+<form class="form" action="{% url 'cerrar' property.id %}">
+	{% csrf_token %}
+	<button class="btn btn-warning">
+		Close Deal
+	</button>
+</form>
+</div>
 {% else %}
-<form action="{% url 'cerrado' property.id %}">
+<form class="form" action="{% url 'cerrado' property.id %}">
 	{% csrf_token %}
 	<button class="btn btn-primary" type="button submit">
-	Generar
+	Generate Emails
 	</button>
 </form>
 {% endif %}
