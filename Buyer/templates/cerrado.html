@@ -2,7 +2,12 @@
 {% load static %}
 {% block content %}
 <h1>{{property.address}} is already closed</h1>
-<h2>You cannot send emails to that</h2>
-<figure><img src='static/img/banner.png' width="100%"></figure>
+<h2>You cannot send emails to a Closed property</h2>
+<figure><img src="{% static 'img/banner.png' %}" width="100%"></figure>
+
+<form action="{% url 'pending' property.id %}">
+	{% csrf_token %}
+	<button class="btn btn-success">Change To Pending</button>
+</form>
 
 {% endblock %}
