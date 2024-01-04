@@ -46,3 +46,9 @@ def saleclosed(request, property_id):
 
 	return render(request, 'detalles.html', {'property': address,
 		'encabezado':address.address})
+
+def closed(request, property_id):
+	address = get_object_or_404(UnderContractBuyer, pk = property_id)
+
+	return render(request, 'cerrado.html', {'encabezado':address.address,
+		'property':address})
