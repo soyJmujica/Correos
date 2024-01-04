@@ -17,19 +17,9 @@
 </p>
 {% if property.status == "Pending" %}
 <div class="form-container">
-<form class="form" action="{% url '7 correos' property.id %}" method="POST">
-	{% csrf_token %}
-	
-	<button class="btn btn-primary" type="button submit">
-	Generate Emails
-	</button>
-</form>
-<form class="form" action="{% url 'cerrar' property.id %}">
-	{% csrf_token %}
-	<button class="btn btn-warning">
-		Close Deal
-	</button>
-</form>
+<a href="{% url '7 correos' property.id %}" class="btn btn-primary" role = "button">Generate Emails</a>
+
+<a href="{% url 'cerrar' property.id %}" class="btn btn-primary" role = "button">Close Deal</a>
 </div>
 {% else %}
 <form class="form" action="{% url 'cerrado' property.id %}">

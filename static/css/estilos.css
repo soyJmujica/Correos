@@ -90,7 +90,8 @@
     display: flex;
 }
 
-.form{
+.btn{
     display: inline-block;
     flex: 1;
+    margin-right: 10px;
 }
