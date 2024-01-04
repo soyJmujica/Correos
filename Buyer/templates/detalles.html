@@ -2,7 +2,7 @@
 {% block content %}
 
 <h1 class="display-4 text-center">{{property.address}}</h1>
-<p>{% if property.status=='Closed' %}
+<p>{% if property.status == "Closed" %}
 	<h1>CLOSED</h1>
 	{% endif %}
 	<h2>Buyer: {{property.buyer_firstname}} {{property.buyer_lastname}}</h2>
