@@ -57,5 +57,5 @@ def salepending(request, property_id):
 	address.status = "Pending"
 	address.save()
 
-	render(request, 'detalles.html', {'property': address,
+	return render(request, 'detalles.html', {'property': address,
 		'encabezado':address.address})
