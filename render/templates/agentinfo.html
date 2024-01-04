@@ -14,7 +14,7 @@
 			<li class="chip">Email: {{agent.email}}</li>
 			<li class="chip">Phone number: {{agent.phone}}</li>	
 			</ul>
-			<div class="action-buttons" style="display: inline-flex;">
+			<div class="action-buttons" style="display: inline-flex;padding: 5px;">
 				<h1><a href="{% url 'pendientes y vendidos' agent.id %}" class="btn btn-info" role="button" title="Deals" style="flex: 1;">Deals</a></h1>
 				<h1><a href="{% url 'pendientes' agent.id %}" class="btn btn-info" role="button" title="Pending" style="flex: 1;">Pending</a></h1>
 				<h1><a href="{% url 'vendidos' agent.id %}" class="btn btn-info" role="button" title="Closed" style="flex: 1;">Closed</a></h1>
