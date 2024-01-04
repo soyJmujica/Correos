@@ -5,7 +5,7 @@
 <h2>You cannot send emails to a Closed property</h2>
 <figure><img src="{% static 'img/banner.png' %}" width="100%"></figure>
 
-<form action="{% url 'pending' property.id %}">
+<form action="{% url 'pendiente' property.id %}">
 	{% csrf_token %}
 	<button class="btn btn-success">Change To Pending</button>
 </form>
