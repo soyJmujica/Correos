@@ -2,6 +2,9 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from .models import UnderContractBuyer
 from .forms import BuyerForm
+from django.template.loader import get_template, render_to_string
+from django.core.mail import EmailMultiAlternatives
+from django.conf import settings
 
 # Create your views here.
 
@@ -59,3 +62,48 @@ def salepending(request, property_id):
 
 	return render(request, 'detalles.html', {'property': address,
 		'encabezado':address.address})
+
+
+def congratulations_send(mail):
+	template = render_to_string('congratulations.html',{'property':mail})
+	content = template
+		
+	email = EmailMultiAlternatives(
+					subject = f"Congratulations!! We are under contract on {mail.address}",
+					body = '',
+					from_email = settings.EMAIL_HOST_USER,
+					to = [mail.buyer_email],
+					cc = []
+			
+					)
+	email.attach_alternative(content, 'text/html')
+
+	email.send()
+
+
+def TCemail_send(mail):
+	template = render_to_string('TCemail.html', {'property':mail})
+	content = template
+
+	email = EmailMultiAlternatives(
+		subject=f"Information about {mail.address}",
+		body='',
+		from_email=settings.EMAIL_HOST_USER,
+		to = [mail.buyer_email],
+		cc = []
+
+		)
+	email.attach_alternative(content, 'text/html')
+
+	email.send()
+
+def emailsend(request, property_id):
+	address = get_object_or_404(UnderContractBuyer, pk = property_id)
+
+	if request.method == 'GET':
+		mail = address
+		print("Enviando correo")
+		congratulations_send(mail)
+		print('Congratulations enviado')
+	return render(request, 'detalles.html', {'encabezado':address.address,
+		'property':address})
