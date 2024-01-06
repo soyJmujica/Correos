@@ -151,3 +151,12 @@ MEDIA_URL = "media/"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+# settings.py
+DATE_INPUT_FORMATS = ['%d-%m-%Y', '%Y-%m-%d', '%m/%d/%Y','%d/%m/%Y']
+
+#Email info
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'EMAIL_ACCOUNT'
+EMAIL_HOST_PASSWORD = 'EMAIL_PASSWORD'
+EMAIL_USE_TLS = True

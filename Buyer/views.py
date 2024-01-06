@@ -89,13 +89,44 @@ def TCemail_send(mail):
 		subject=f"Information about {mail.address}",
 		body='',
 		from_email=settings.EMAIL_HOST_USER,
-		to = [mail.buyer_email],
+		to = [mail.titlecompany_email],
 		cc = []
 
 		)
 	email.attach_alternative(content, 'text/html')
 
 	email.send()
+
+def Lender_send(mail):
+	template = render_to_string('Lender email.html', {'property':mail})
+	content = template
+
+	email = EmailMultiAlternatives(
+		subject=f"Information for {mail.lender} about {mail.address}",
+		body='',
+		from_email=settings.EMAIL_HOST_USER,
+		to = [mail.lender_email],
+		cc = []
+		)
+	email.attach_alternative(content, 'text/html')
+
+	email.send()
+
+def Title_send(mail):
+	template = render_to_string('Title email buyer.html', {'property':mail})
+	content = template
+
+	email = EmailMultiAlternatives(
+		subject = f"Important Information about {mail.address}",
+		body='',
+		from_email=settings.EMAIL_HOST_USER,
+		to = [mail.titlecompany_email],
+		cc = []
+		)
+	email.attach_alternative(content,'text/html')
+
+	email.send()
+
 
 def emailsend(request, property_id):
 	address = get_object_or_404(UnderContractBuyer, pk = property_id)
@@ -105,5 +136,13 @@ def emailsend(request, property_id):
 		print("Enviando correo")
 		congratulations_send(mail)
 		print('Congratulations enviado')
+		TCemail_send(mail)
+		print('TCemail enviado')
+		Lender_send(mail)
+		print("Lender's Email send")
+		Title_send(mail)
+		print('Title email send')
+
 	return render(request, 'detalles.html', {'encabezado':address.address,
 		'property':address})
+
