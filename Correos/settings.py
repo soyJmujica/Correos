@@ -155,6 +155,7 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 DATE_INPUT_FORMATS = ['%d-%m-%Y', '%Y-%m-%d', '%m/%d/%Y','%d/%m/%Y']
 
 #Email
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'master1495@gmail.com'
