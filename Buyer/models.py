@@ -12,7 +12,7 @@ class UnderContractBuyer(models.Model):
 	address = models.CharField(max_length = 100, verbose_name='Property')
 	buyer_firstname = models.CharField(max_length = 100, verbose_name="Buyer's first name")
 	buyer_lastname = models.CharField(max_length = 100,verbose_name="Buyer's last name")
-	buyer_email = models.CharField(max_length = 100, verbose_name='Email')
+	buyer_email = models.CharField(max_length = 100, verbose_name="Buyer's Email")
 	buyer_phone = models.CharField(max_length = 100, verbose_name='Phone number')
 	titlecompany = models.CharField(max_length = 100, verbose_name='Title company')
 	titleagent = models.CharField(max_length = 100, blank = True, null = True, verbose_name = "Title Agent")
