@@ -5,6 +5,7 @@ from .forms import BuyerForm
 from django.template.loader import get_template, render_to_string
 from django.core.mail import EmailMultiAlternatives
 from django.conf import settings
+import smtplib
 
 # Create your views here.
 
